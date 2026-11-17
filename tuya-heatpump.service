@@ -1,0 +1,15 @@
+[Unit]
+Description=Tuya R32 Heat Pump Monitor
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=tekinaltun
+WorkingDirectory=/home/tekinaltun/projects/tuya-local
+ExecStart=/home/tekinaltun/projects/tuya-local/venv/bin/python /home/tekinaltun/projects/tuya-local/app_local.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
